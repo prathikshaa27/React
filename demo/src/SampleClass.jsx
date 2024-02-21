@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class NewComponent extends Component{
     render(){
         return(
-            <div>
+            <div class="example">
             <h1>Hello</h1>
             <p>Sample class Program</p>
             </div>

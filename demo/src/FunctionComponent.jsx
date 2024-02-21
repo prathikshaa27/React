@@ -1,9 +1,12 @@
 import React from "react";
 const Message =()=>{
     return(
-    <div>
+        <div>
+        
         <h1>Hello world</h1>
-    </div>
+        <p>Hi iam prathi</p>
+        </div>
+   
     );
 }
 export {Message};
