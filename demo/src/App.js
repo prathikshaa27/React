@@ -11,6 +11,11 @@ import {Message} from "./FunctionComponent";
 import {Basic} from "./NewComponent";
 import {Example} from "./DisplayingData";
 import {Greeting} from "./ConditionalRendering";
+import {List} from "./RenderingList";
+import {Objs} from "./RenderingLists1"
+import {Event} from "./Events";
+import {Event1} from "./Events";
+import {Event2} from './Events';
 class App extends Component{
   render(){
     return(
@@ -33,6 +38,11 @@ function App1(){
       <Basic/>
       <Example /> 
       <Greeting LoggedIn={LoggedIn}/>
+      <List/>
+      <Objs/>
+      <Event/>
+      <Event1/>
+      <Event2 />
       
     </div>
   )
