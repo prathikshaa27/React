@@ -39,6 +39,9 @@ import DerievedComponent from "./DerievedComponent";
 import Form1 from "./Form1";
 import {Example1,HuseEffect,Sample,Sample1} from "./Hooks";
 import Button from "./LiftingState";
+import CodeSplitting from "./CodeSplitting";
+import LoginForm from "./LoginForm";
+import {UserProvider} from './context';
 class App extends Component{
   render(){
     return(
@@ -59,10 +62,10 @@ function App1(){
   // function handleClick(){
   //   console.log('Clicked the button')
   // }
-  const [count, setCount] = useState(0);  
-  function Click() {
-    setCount(count + 1)
-  }
+  // const [count, setCount] = useState(0);  
+  // function Click() {
+  //   setCount(count + 1)
+  // }
   
   return(
     
@@ -86,27 +89,32 @@ function App1(){
       <Callback/>
       <LifecycleComponent/> */}
       {/* <Employee name ="Prathi" empid = {111}/> */}
-       <Example1/>
+       {/* <Example1/>
       <HuseEffect/>
-      <Sample/>
+      <Sample/> */}
 
     {/* <Forms/> */}
       {/* <UncontrolledComponents/> 
       <ControlledComponent/>  */}
       {/* <Main name="John"/>
       <Parent1/> */}
-      <Sample1/>
+      {/* <Sample1/> */}
       
       {/* <ChildComponent getState={getState}/> */}
      {/* <SimpleButton onClick ={handleClick}>Click here</SimpleButton>` */}
       {/* <h1>Inheritance Example</h1>
       <DerievedComponent text ="Hello"/> */}
       {/* <Form1/> */}
-      <Button count={count} onClick={Click} />
+      {/* <Button count={count} onClick={Click} />
      <Button count={count} onClick={Click} />
-      
-      
-
+       */}
+      {/* <CodeSplitting/> */}
+      <UserProvider>
+      <div>
+        <h1>Simple Context Example</h1>
+        <LoginForm />
+      </div>
+    </UserProvider>
 
 
 
