@@ -37,11 +37,19 @@ import ChildCHelloomponent from "./ChildComponent";
 import SimpleButton from "./SimpleButton";
 import DerievedComponent from "./DerievedComponent";
 import Form1 from "./Form1";
-import {Example1,HuseEffect,Sample,Sample1} from "./Hooks";
 import Button from "./LiftingState";
 import CodeSplitting from "./CodeSplitting";
 import LoginForm from "./LoginForm";
 import {UserProvider} from './context';
+import ErrorBoundary from "./ErrorBoundary";
+import ErrorProneComponent from "./ErrorProneComponent";
+import ParentComponent from "./ForwardingRefs";
+import Fragments from "./fragments";
+import withErrrorBoundary from "./HigherOrderComponent";
+import TestComponentwithErrorBoundary from "./TestComponent";
+import {element,result,image,Parent} from "./JsxInDepth";
+import InputComponent from "./AllHooks";
+
 class App extends Component{
   render(){
     return(
@@ -80,7 +88,7 @@ function App1(){
       <Event1/>
       <Event2 />
       <User name="Prathi"/>
-      <User age={22}/>
+      <User age={22}/true>
       <User name="Mike"/>
       <User age={15}/> */}
       {/* <Counter/>
@@ -109,12 +117,31 @@ function App1(){
      <Button count={count} onClick={Click} />
        */}
       {/* <CodeSplitting/> */}
-      <UserProvider>
+      {/* <UserProvider>
       <div>
         <h1>Simple Context Example</h1>
         <LoginForm />
       </div>
-    </UserProvider>
+    </UserProvider> */}
+    
+      {/* <MyComponent /> */}
+      {/* <LoginForm/>
+      <MyComponent triggerError={true} />
+   */}
+    <ErrorBoundary>
+    <ErrorProneComponent/>
+   </ErrorBoundary> 
+   {/* <ParentComponent/>
+   <Fragments/>
+   <TestComponentwithErrorBoundary/>
+   {element}
+   {result}
+   {image}
+   {Parent} */}
+   <InputComponent/>
+  
+
+   
 
 
 

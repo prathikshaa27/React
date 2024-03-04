@@ -1,24 +1,70 @@
-// LoginForm.js
-import React from 'react';
-import { useUser } from './context';
+import React, { useState, useRef } from 'react';
 
 const LoginForm = () => {
-  const { user, login, logout } = useUser();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const emailRef = useRef();
+  const fileRef = useRef();
+
+  
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log('Email:', emailRef.current.value);
+    console.log('File:', fileRef.current.files[0]);
+    
+  };
 
   return (
-    <div>
-      {user.isAuthenticated ? (
-        <div>
-          <p>Welcome, {user.username}! You are logged in.</p>
-          <button onClick={logout}>Logout</button>
-        </div>
-      ) : (
-        <div>
-          <p>Please log in.</p>
-          <button onClick={() => login('prathi')}>Login</button>
-        </div>
-      )}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <h1>LoginForm</h1>
+        <label>
+          Username:
+          <input type="text" value={username} onChange={handleUsernameChange} />
+        </label>
+        <br></br>
+        <br></br>
+      </div>
+      <div>
+        <label>
+          Password:
+          <input type="password" value={password} onChange={handlePasswordChange} />
+        </label>
+        <br></br>
+        <br></br>
+      </div>
+    
+      <div>
+        <label>
+          Email:
+          <input type="email" ref={emailRef} />
+        </label>
+        <br></br>
+        <br></br>
+       
+      </div>
+      <div>
+        <label>
+          Upload File:
+          <input type="file" ref={fileRef} />
+          <br></br>
+        </label>
+      </div>
+      <br></br>
+      <br></br>
+
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
