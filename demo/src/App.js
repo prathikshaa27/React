@@ -159,6 +159,8 @@ function App1(){
    <AuthenticatedUserComponent user ={{Name:"prathi", email:"prathi@gmail.com"}}/>
    {element}
    <MyComponent/>
+   <useCounter/>
+   
    
  
    
