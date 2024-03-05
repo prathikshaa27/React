@@ -9,7 +9,6 @@ export default function UncontrolledComponents() {
     }
 
   return (
-
     <div>
         <h1>EXample for uncontrolled components </h1>
         <form onSubmit={toHandleSubmit}>

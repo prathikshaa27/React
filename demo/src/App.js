@@ -49,6 +49,11 @@ import withErrrorBoundary from "./HigherOrderComponent";
 import TestComponentwithErrorBoundary from "./TestComponent";
 import {element,result,image,Parent} from "./JsxInDepth";
 import InputComponent from "./AllHooks";
+import GreetingComponent from "./GreetingComponent"
+import Button from "./RefProps"
+import withAuthentication from "./Authentication";
+import UserComponent from "./UserComponent";
+import MyComponent from "./WithoutES6"
 
 class App extends Component{
   render(){
@@ -66,6 +71,7 @@ class App extends Component{
   }
 }
 
+const AuthenticatedUserComponent = withAuthentication(UserComponent);
 function App1(){
   // function handleClick(){
   //   console.log('Clicked the button')
@@ -74,6 +80,10 @@ function App1(){
   // function Click() {
   //   setCount(count + 1)
   // }
+  // const handleClick=()=>{
+  //   alert("Button Clicked");
+  // }
+  
   
   return(
     
@@ -125,12 +135,12 @@ function App1(){
     </UserProvider> */}
     
       {/* <MyComponent /> */}
-      {/* <LoginForm/>
-      <MyComponent triggerError={true} />
-   */}
-    <ErrorBoundary>
+       <LoginForm/>
+      {/* <MyComponent triggerError={true} />
+  //  */} 
+    {/* <ErrorBoundary>
     <ErrorProneComponent/>
-   </ErrorBoundary> 
+   </ErrorBoundary>  */}
    {/* <ParentComponent/>
    <Fragments/>
    <TestComponentwithErrorBoundary/>
@@ -138,9 +148,19 @@ function App1(){
    {result}
    {image}
    {Parent} */}
-   <InputComponent/>
-  
-
+   {/* <InputComponent/>
+   <GreetingComponent/> */}
+   {/* <Button onClick={this.handleClick}>
+          Click here!
+        </Button>
+   */}
+   {/* <FormComponent/> */}
+   <withAuthentication/>
+   <AuthenticatedUserComponent user ={{Name:"prathi", email:"prathi@gmail.com"}}/>
+   {element}
+   <MyComponent/>
+   
+ 
    
 
 

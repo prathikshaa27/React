@@ -1,67 +1,47 @@
 import React, { useState, useRef } from 'react';
+import formFields from './formFields'; 
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({});
 
   const emailRef = useRef();
   const fileRef = useRef();
 
-  
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+  const handleChange = (field, value) => {
+    setFormData((prevData) => ({ ...prevData, [field]: value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    console.log('Form Data:', formData);
     console.log('Email:', emailRef.current.value);
     console.log('File:', fileRef.current.files[0]);
-    
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <h1>LoginForm</h1>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </label>
-        <br></br>
-        <br></br>
+        {formFields.map((field) => (
+          <div key={field.label}>
+            <label>
+              {field.label}:
+              {field.type !== 'file' ? (
+                <input
+                  type={field.type}
+                  value={formData[field.state] || ''}
+                  onChange={(e) => handleChange(field.state, e.target.value)}
+                />
+              ) : (
+                <input type="file" ref={fileRef} />
+              )}
+            </label>
+            <br />
+            <br />
+          </div>
+        ))}
       </div>
-      <div>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </label>
-        <br></br>
-        <br></br>
-      </div>
-    
-      <div>
-        <label>
-          Email:
-          <input type="email" ref={emailRef} />
-        </label>
-        <br></br>
-        <br></br>
-       
-      </div>
-      <div>
-        <label>
-          Upload File:
-          <input type="file" ref={fileRef} />
-          <br></br>
-        </label>
-      </div>
-      <br></br>
-      <br></br>
 
       <button type="submit">Submit</button>
     </form>
