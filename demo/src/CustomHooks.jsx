@@ -1,24 +1,22 @@
 import React,{useState} from 'react';
 
-const useCounter =(initial=0,value=1)=>{
-    const[count,setCount]=useState(initial);
+const useToggle=(initialvalue =false)=>{
+    const[value, setValue]= useState("initialvalue")
 
-
-const increament =()=>{
-    setCount(count+value);
-};
-const decreament =() =>{
-    setCount(count-value);
-};
-const reset =() =>{
-    setCount(initial);
-};
-return{
-    count,
-    increament,
-    decreament,
-    reset
-
+    const toggle =()=>{
+        setValue((prevValue) =>!prevValue);
+    };
+    return[value,toggle];
 }
+
+function ToggleComponent(){
+    const[isTogled,toggle] = useToggle(false);
+    return(
+        <div>
+            <p>{isToggle?"Tgogle on":"Toggled off"}</p>
+            <button onClick={toggle}>Toggle</button>
+        </div>
+    );
 }
-export default useCounter;
+
+export default ToggleComponent;

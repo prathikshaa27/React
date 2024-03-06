@@ -50,11 +50,13 @@ import TestComponentwithErrorBoundary from "./TestComponent";
 import {element,result,image,Parent} from "./JsxInDepth";
 import InputComponent from "./AllHooks";
 import GreetingComponent from "./GreetingComponent"
-import Button from "./RefProps"
 import withAuthentication from "./Authentication";
 import UserComponent from "./UserComponent";
-import MyComponent from "./WithoutES6"
-
+import MyComponent from "./WithoutES6";
+import Counter1 from "./UseReducer";
+import Result from "./useMemo";
+import Message from "./UseCallback";
+import ToggleComponent from "./CustomHooks";
 class App extends Component{
   render(){
     return(
@@ -150,16 +152,16 @@ function App1(){
    {Parent} */}
    {/* <InputComponent/>
    <GreetingComponent/> */}
-   {/* <Button onClick={this.handleClick}>
-          Click here!
-        </Button>
-   */}
    {/* <FormComponent/> */}
    <withAuthentication/>
    <AuthenticatedUserComponent user ={{Name:"prathi", email:"prathi@gmail.com"}}/>
    {element}
    <MyComponent/>
-   <useCounter/>
+   {/* <useCounter/> */}
+   {/* <Counter1/> */}
+   <Result/>
+   <Message/>
+   <ToggleComponent/>
    
    
  
