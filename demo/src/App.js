@@ -40,7 +40,7 @@ import Form1 from "./Form1";
 import Button from "./LiftingState";
 import CodeSplitting from "./CodeSplitting";
 import LoginForm from "./LoginForm";
-import {UserProvider} from './context';
+// import {UserProvider} from './context';
 import ErrorBoundary from "./ErrorBoundary";
 import ErrorProneComponent from "./ErrorProneComponent";
 import ParentComponent from "./ForwardingRefs";
@@ -53,10 +53,12 @@ import GreetingComponent from "./GreetingComponent"
 import withAuthentication from "./Authentication";
 import UserComponent from "./UserComponent";
 import MyComponent from "./WithoutES6";
-import Counter1 from "./UseReducer";
-import Result from "./useMemo";
-import Message from "./UseCallback";
-import ToggleComponent from "./CustomHooks";
+// import Counter1 from "./UseReducer";
+// import Result from "./useMemo";
+// import Message from "./UseCallback";
+import Table from './useMemo';
+import MyForm from "./CustomHooks";
+
 class App extends Component{
   render(){
     return(
@@ -72,8 +74,6 @@ class App extends Component{
     );
   }
 }
-
-const AuthenticatedUserComponent = withAuthentication(UserComponent);
 function App1(){
   // function handleClick(){
   //   console.log('Clicked the button')
@@ -99,6 +99,7 @@ function App1(){
       <Event/>
       <Event1/>
       <Event2 />
+      <DidUpdate/>
       <User name="Prathi"/>
       <User age={22}/true>
       <User name="Mike"/>
@@ -137,12 +138,12 @@ function App1(){
     </UserProvider> */}
     
       {/* <MyComponent /> */}
-       <LoginForm/>
+       {/* <LoginForm/> */}
       {/* <MyComponent triggerError={true} />
   //  */} 
-    {/* <ErrorBoundary>
+    <ErrorBoundary>
     <ErrorProneComponent/>
-   </ErrorBoundary>  */}
+   </ErrorBoundary> 
    {/* <ParentComponent/>
    <Fragments/>
    <TestComponentwithErrorBoundary/>
@@ -153,15 +154,16 @@ function App1(){
    {/* <InputComponent/>
    <GreetingComponent/> */}
    {/* <FormComponent/> */}
-   <withAuthentication/>
+   {/* <withAuthentication/>
    <AuthenticatedUserComponent user ={{Name:"prathi", email:"prathi@gmail.com"}}/>
-   {element}
-   <MyComponent/>
+   <MyComponent/> */}
    {/* <useCounter/> */}
    {/* <Counter1/> */}
-   <Result/>
+   {/* <Result/>
    <Message/>
-   <ToggleComponent/>
+   <ToggleComponent/> */}
+   <MyForm/>
+   <Table/>
    
    
  

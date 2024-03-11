@@ -5,7 +5,7 @@ const withAuthentication =(WrappedComponent)=>{
         constructor(props){
             super(props);
             this.state ={
-                isAuthenticated:False
+                isAuthenticated:false
 
             }
         }

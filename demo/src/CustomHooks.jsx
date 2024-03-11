@@ -1,22 +1,44 @@
-import React,{useState} from 'react';
+import { useState } from 'react';
 
-const useToggle=(initialvalue =false)=>{
-    const[value, setValue]= useState("initialvalue")
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
 
-    const toggle =()=>{
-        setValue((prevValue) =>!prevValue);
-    };
-    return[value,toggle];
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return {
+    value,
+    onChange: handleChange,
+  };
 }
 
-function ToggleComponent(){
-    const[isTogled,toggle] = useToggle(false);
-    return(
-        <div>
-            <p>{isToggle?"Tgogle on":"Toggled off"}</p>
-            <button onClick={toggle}>Toggle</button>
-        </div>
-    );
+function MyForm() {
+  const usernameInput = useFormInput('');
+  const passwordInput = useFormInput('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Username:', usernameInput.value);
+    console.log('Password:', passwordInput.value);
+   
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input type="text" {...usernameInput} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" {...passwordInput} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 
-export default ToggleComponent;
+export default MyForm;
