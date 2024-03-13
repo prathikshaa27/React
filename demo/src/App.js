@@ -3,62 +3,66 @@ export default function app(){
   return <Demo/>;
 }*/
 import { Component,useState } from "react";
-import './NewComponent.css';
-import NewComponent from "./SampleClass";
-import { NewComponent1 } from "./SampleClass";
-import { NewComponent2 } from "./SampleClass";
-import {Message} from "./FunctionComponent";
+//import './NewComponent.css';
+import NewComponent from "./sampleclass";
+import { NewComponent1 } from "./sampleclass";
+import { NewComponent2 } from "./sampleclass";
+import {Message} from "./functioncomponent";
 import {Basic} from "./NewComponent";
 import {Example} from "./DisplayingData";
-import {Greeting} from "./ConditionalRendering";
-import {List} from "./RenderingList";
-import {Objs} from "./RenderingLists1"
-import {Event} from "./Events";
-import {Event1} from "./Events";
-import {Event2} from './Events';
-import { User } from "./FunctionProps";
-import {Count} from "./State";
-import {Counter} from "./FunctionState";
-import {Counter1} from "./FunctionState";
-import { LifecycleComponent } from "./LifecycleComponents";
-import { Employee } from "./Employee";
-import { Skills } from "./Skills";
+import {Greeting} from "./conditionalrendering";
+import {List} from "./renderinglist";
+import {Event} from "./events";
+import {Event1} from "./events";
+import {Event2} from './events';
+import { User } from "./functionprops";
+import {Count} from "./state";
+import {Counter} from "./functionstate";
+import {Counter1} from "./functionstate";
+import Lifecycle from "./lifecyclemethods";
 // import Example1 from "./HooksUseState";
 // import HuseEffect from "./HooksUseEffect";
 // import Sample from "./HooksUsexontext";
 // import {Sample1} from "./HooksUseRef";
 // import {Forms } from "./forms";
-import UncontrolledComponents from "./UncontrolledComponents";
-import ControlledComponent from "./ControlledComponent";
-import parent from "./parent";
-import Main from "./Main";
-import Parent1 from "./Parent1";
-import ChildCHelloomponent from "./ChildComponent";
-import SimpleButton from "./SimpleButton";
-import DerievedComponent from "./DerievedComponent";
-import Form1 from "./Form1";
-import Button from "./LiftingState";
-import CodeSplitting from "./CodeSplitting";
-import LoginForm from "./LoginForm";
-// import {UserProvider} from './context';
-import ErrorBoundary from "./ErrorBoundary";
-import ErrorProneComponent from "./ErrorProneComponent";
-import ParentComponent from "./ForwardingRefs";
+import UncontrolledComponents from "./uncontrolledcomponents";
+import ControlledComponent from "./controlledcomponent";
+import Main from "./main";
+import ChildCHelloomponent from "./childcomponent";
+import SimpleButton from "./simplebutton";
+import DerievedComponent from "./derievedcomponent";
+import Button from "./liftingstate";
+import CodeSplitting from "./codesplitting";
+// import LoginForm from "./LoginForm";
+import ErrorBoundary from "./errorboundary";
+import ErrorProneComponent from "./errorpronecomponent";
+import ParentComponent from "./forwardingrefs";
 import Fragments from "./fragments";
-import withErrrorBoundary from "./HigherOrderComponent";
-import TestComponentwithErrorBoundary from "./TestComponent";
-import {element,result,image,Parent} from "./JsxInDepth";
-import InputComponent from "./AllHooks";
-import GreetingComponent from "./GreetingComponent"
-import withAuthentication from "./Authentication";
-import UserComponent from "./UserComponent";
-import MyComponent from "./WithoutES6";
+import withErrrorBoundary from "./higherordercomponent";
+import TestComponentwithErrorBoundary from "./testcomponent";
+import {element,result,image,Parent} from "./jsxindepth";
+import InputComponent from "./allhooks";
+import GreetingComponent from "./greetingcomponent"
+import withAuthentication from "./authentication";
+import UserComponent from "./usercomponent";
+import MyComponent from "./withoutes6";
 // import Counter1 from "./UseReducer";
 // import Result from "./useMemo";
 // import Message from "./UseCallback";
-import Table from './useMemo';
-import MyForm from "./CustomHooks";
-
+// import Table from './useMemo';
+// import MyForm from "./CustomHooks";
+import LoginForm from "./login";
+import DidUpdate from "./componentdidupdate";
+import AuthenticatedComponent from './authenticateduserprofile'
+import InputComponentS from "./allhooks";
+import { AuthProvider } from "./allhooks";
+import LoginFormAxios from "./axios/loginform";
+import DeleteRequest from "./axios/deleterequest";
+import PostDataComponent from "./postdata copy";
+import PutDataComponent from "./axios/putdata";
+import DataFetchingComponent from "./axios/getrequest";
+import Productlist from "./components/productlist";
+import Cart from './components/cart';
 class App extends Component{
   render(){
     return(
@@ -90,12 +94,11 @@ function App1(){
   return(
     
     <div>
-      {/* {/* <Message/>
+      {/* {/* <Mesprathisage/>
       <Basic/Hello>
       <Example /> 
       <Greeting LoggedIn={LoggedIn}/>
       <List/>
-      <Objs/>
       <Event/>
       <Event1/>
       <Event2 />
@@ -115,8 +118,8 @@ function App1(){
       <Sample/> */}
 
     {/* <Forms/> */}
-      {/* <UncontrolledComponents/> 
-      <ControlledComponent/>  */}
+       <UncontrolledComponents/> 
+      <ControlledComponent/>  
       {/* <Main name="John"/>
       <Parent1/> */}
       {/* <Sample1/> */}
@@ -137,13 +140,13 @@ function App1(){
       </div>
     </UserProvider> */}
     
-      {/* <MyComponent /> */}
+       {/* <MyComponent /> */}
        {/* <LoginForm/> */}
       {/* <MyComponent triggerError={true} />
   //  */} 
-    <ErrorBoundary>
+    {/* <ErrorBoundary>
     <ErrorProneComponent/>
-   </ErrorBoundary> 
+   </ErrorBoundary>  */}
    {/* <ParentComponent/>
    <Fragments/>
    <TestComponentwithErrorBoundary/>
@@ -152,9 +155,9 @@ function App1(){
    {image}
    {Parent} */}
    {/* <InputComponent/>
-   <GreetingComponent/> */}
+   <GreetingComponent/> 
    {/* <FormComponent/> */}
-   {/* <withAuthentication/>
+   {/* <WithAuthentication/>
    <AuthenticatedUserComponent user ={{Name:"prathi", email:"prathi@gmail.com"}}/>
    <MyComponent/> */}
    {/* <useCounter/> */}
@@ -162,9 +165,20 @@ function App1(){
    {/* <Result/>
    <Message/>
    <ToggleComponent/> */}
-   <MyForm/>
-   <Table/>
-   
+   {/* <MyForm/>
+   <Table/> */}
+    {/* <ParentComponent/>
+    <GreetingComponent/>  */}
+    {/* <DidUpdate/>
+     <TestComponentwithErrorBoundary/> */}
+     {/* <AuthenticatedComponent /> */}
+     <LoginFormAxios/>
+     <DeleteRequest/>
+     <DataFetchingComponent/>
+     <PostDataComponent/>
+     <PutDataComponent/>
+     <Productlist/>
+     <Cart/>
    
  
    
