@@ -6,7 +6,7 @@ function Example1(){
     return(
         <div> 
             <h1>Example using UseState </h1>
-            <button onClick ={()=>setCount(count+2)}>Click here to see the values get increamented</button>
+            <button onClick ={()=>setCount(count+2)}>Click here to see the values get increamented by 2</button>
             <p>Current count is: {count}</p>
         </div>
     );

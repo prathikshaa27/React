@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 
-export default function NewComponent() {
+export default function SampleComponent() {
     const navigate = useNavigate();
 
     function handleClick(){

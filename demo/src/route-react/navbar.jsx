@@ -5,8 +5,8 @@ export default function Navbar(){
         <div>
         <nav>
             <NavLink to ="/" className="nav">Home</NavLink>
-            <NavLink to ="/About" className="nav">About</NavLink>
-            <NavLink to ="/Products" className="nav">Products</NavLink>
+            <NavLink to ="/about" className="nav">About</NavLink>
+            <NavLink to ="/products" className="nav">Products</NavLink>
         </nav>
         </div>
     );

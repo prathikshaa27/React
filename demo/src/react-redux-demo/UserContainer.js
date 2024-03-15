@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers } from '.';
+import { fetchUsers } from './userActions';
 
 function UserContainer({ userData, fetchUsers }) {
   useEffect(() => {
     fetchUsers();
-  }, []);
+  });
 
   return userData.loading ? (
     <h2>Loading</h2>
@@ -15,9 +15,8 @@ function UserContainer({ userData, fetchUsers }) {
     <div>
       <h2>Users list</h2>
       <div>
-        {userData &&
-          userData.users &&
-          userData.users.map((user) =>
+        {
+          userData.map((user) =>
             <p key={user.id}>{user.name}</p>
           )}
       </div>
@@ -27,7 +26,7 @@ function UserContainer({ userData, fetchUsers }) {
 
 const mapStateToProps = (state) => {
   return {
-    userData: state.users,
+    userData: state.users.users,
   };
 };
 

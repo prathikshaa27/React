@@ -1,11 +1,10 @@
 import React , {Component}from 'react';
-import DerievedComponent from './derievedcomponent';
 
 class BaseComponent extends Component{
     render(){
         return(
             <div>
-                <h1>{this.props.text}</h1>
+                <h1>This is the parent component</h1>
 
             </div>
         );

@@ -14,7 +14,7 @@ export default class Lifecycle extends Component{
         console.warn("render called");
         return(
             <>
-            <h1>Component Did Mount{this.state.name}</h1>
+            <h1>Component Did Mount {this.state.name}</h1>
             <button onClick={()=>{this.setState({name:"Mike"})}}>Update</button>
             </>
         );

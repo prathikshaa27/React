@@ -40,7 +40,7 @@ function reducer(state=initialState,action){
         case FETCH_USERS_SUCCESS:
             return{
                 loading:false,
-                users:action.payload,//payload prop action now contains
+                users:action.payload,
                 error:''
             }
         case FETCH_USERS_FAILURE:

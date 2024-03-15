@@ -6,7 +6,7 @@ class DerievedComponent extends BaseComponent{
         return(
             <div>
                 {super.render()}
-                <p>Child component</p>
+                <p>This is the Child component</p>
             </div>
         )
     }
