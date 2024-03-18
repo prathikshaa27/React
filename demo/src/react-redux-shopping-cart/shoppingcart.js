@@ -6,10 +6,6 @@ const ShoppingCart = () => {
   const cartItems = useSelector(state => state.cartItems);
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart=(itemId)=>{
-    dispatch(removeFromCart(itemId));
-  };
-
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -17,7 +13,7 @@ const ShoppingCart = () => {
         {cartItems.map(item => (
           <li key={item.id}>
             {item.name} - ${item.price}
-            <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+            <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
           </li>
         ))}
       </ul>

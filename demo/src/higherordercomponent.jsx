@@ -6,7 +6,7 @@ const withErrrorBoundary =(WrappedComponent)=>{
             super(props);
             this.state ={hasError:false}
         }
-        componentDidMount(error,errinfo){
+        componentDidCatch(error,errinfo){
             this.setState({hasError:false});
             console.log("Error caught by error biundary",error ,errinfo);
     }

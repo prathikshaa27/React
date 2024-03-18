@@ -4,6 +4,7 @@ export default function app(){
 }*/
 import { Component,useState } from "react";
 //import './NewComponent.css';
+import './route-react/style.css';
 import NewComponent from "./sampleclass";
 import { NewComponent1 } from "./sampleclass";
 import { NewComponent2 } from "./sampleclass";
@@ -56,14 +57,13 @@ import DidUpdate from "./componentdidupdate";
 import AuthenticatedComponent from './authenticateduserprofile'
 import InputComponentS from "./allhooks";
 import { AuthProvider } from "./allhooks";
-import LoginFormAxios from "./axios/loginform";
 import DeleteRequest from "./axios/deleterequest";
 import PostDataComponent from "./axios/postdata";
 import PutDataComponent from "./axios/putdata";
 import DataFetchingComponent from "./axios/getrequest";
 import Page from "./page";
 import CleanUp from "./hooksuseeffect";
-import {Routes,Route} from 'react-router-dom';
+ import {Routes,Route} from 'react-router-dom';
 import Navbar from '../../demo/src/route-react/navbar';
 import Home from './route-react/home';
 import About from './route-react/about';
@@ -71,27 +71,28 @@ import About from './route-react/about';
 import Products from '../../demo/src/route-react/products';
 import OldProducts from '../../demo/src/route-react/oldproducts';
 import NewProducts from './route-react/newproducts';
-import ProductDetails from '../../demo/src/route-react/productdetails';
 import Users from './route-react/users';
 import UserDetails from './route-react/userdetails'
 import SampleComponent from '../../demo/src/route-react/newcomponent';
-import AnotherComponent from './anothercomponent';
-import LoginComponentAxios from "./axios/userauthentication";
+import AnotherComponent from './route-react/anothercomponent';
 // import { Provider } from "react-redux";
 import UserContainer from "./react-redux-demo/UserContainer";
+import Upper from './liftingstate';
 //import store from "./react-redux-demo/store1";
 import { Provider } from "react-redux";
 import store from './react-redux-shopping-cart/store';
 import ProductList from "./react-redux-shopping-cart/productlist";
 import ShoppingCart from "./react-redux-shopping-cart/shoppingcart";
-import Shirts from "./route-react/shirts";
+//import { BrowserRouter as Routes, Route} from 'react-router-dom';
+import WrapperComponent from "./wrapped";
 
-const products =[
-  {id:1, name:'Handbags',price:10},
-  {id:2, name:'Toys',price:15},
-  {id:3, name:'Stationary items',price:20},
+
+
+const products = [
+  { id: 1, name: 'Handbags', price: 10 },
+  { id: 2, name: 'Toys', price: 20 },
+  { id: 3, name: 'Stationary items', price: 30 },
 ];
-
 class App extends Component{
   render(){
     return(
@@ -108,20 +109,12 @@ class App extends Component{
   }
 }
 function App1(){
-  // function handleClick(){
-  //   console.log('Clicked the button')
-  // }
-  // const [count, setCount] = useState(0);  
-  // function Click() {
-  //   setCount(count + 1)
-  // }
-  // const handleClick=()=>{
-  //   alert("Button Clicked");
-  // }
+
+return(
   
   
-  return(
-    
+
+
     <div>
       {/* {/* <Mesprathisage/>
       <Basic/Hello>
@@ -162,7 +155,11 @@ function App1(){
       {/* <CodeSplitting/> */}
       {/* <UserProvider>
       <div>
-        <h1>Simple Context Example</h1>
+        <h1>Simple Context Example</RROR in ./src/App.js 120:39-45
+export 'Switch' (imported as 'Switch') was not found in 'react-router-dom' (possible exports: AbortedDeferredError, Await, BrowserRouter, Form, HashRouter, Link, MemoryRouter, NavLink, Navigate, NavigationType, Outlet, Route, Router, RouterProvider, Routes, ScrollRestoration, UNSAFE_DataRouterContext, UNSAFE_DataRouterStateContext, UNSAFE_FetchersContext, UNSAFE_LocationContext, UNSAFE_NavigationContext, UNSAFE_RouteContext, UNSAFE_ViewTransitionContext, UNSAFE_useRouteId, UNSAFE_useScrollRestoration, createBrowserRouter, createHashRouter, createMemoryRouter, createPath, createRoutesFromChildren, createRoutesFromElements, createSearchParams, defer, generatePath, isRouteErrorResponse, json, matchPath, matchRoutes, parsePath, redirect, redirectDocument, renderMatches, resolvePath, unstable_HistoryRouter, unstable_usePrompt, unstable_useViewTransitionState, useActionData, useAsyncError, useAsyncValue, useBeforeUnload, useBlocker, useFetcher, useFetchers, useFormAction, useHref, useInRouterContext, useLinkClickHandler, useLoaderData, useLocation, useMatch, useMatches, useNavigate, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useResolvedPath, useRevalidator, useRouteError, useRouteLoaderData, useRoutes, useSearchParams, useSubmit)
+
+webpack compiled with 1 error and 1 warning
+h1>
         <LoginForm />
       </div>
     </UserProvider> */}
@@ -173,7 +170,8 @@ function App1(){
   //  */} 
     {/* <ErrorBoundary>
     <ErrorProneComponent/>
-   </ErrorBoundary>  */}
+   </ErrorBoundary> 
+   <WrapperComponent/> */}
    {/* <ParentComponent/>
    <Fragments/>
    <TestComponentwithErrorBoundary/>
@@ -210,39 +208,38 @@ function App1(){
      <Lifecycle/>
      <DeleteRequest/> */}
      {/* <LoginComponentAxios/> */}
-       <Navbar/>
-      <Routes>
-        <Route path='/' element ={<Home/>}/>
-        <Route path='/about' element ={<About/>}/>
-
-        
-        <Route path='/products' element ={<Products/>}>
-          {/* <Route index element ={<NewProducts/>}/> */}
-          <Route path ='oldProducts' element = {<OldProducts/>}>
-            <Route path='shirts' element={<Shirts/>}/>
+     {/* <Upper/> */}
+   
+         <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/products" element={<Products/>}>
+          <Route path="oldproducts" element={<OldProducts/>}/>
+          <Route path="newproducts" element={<NewProducts/>}/>
           </Route>
-          <Route path ='newProducts' element={<NewProducts/>}/>       
-        </Route>
-        <Route path='/users' element ={<Users/>}/>
-        <Route path ='users/:UserId'  element={<UserDetails/>}/>
-        {/* <Route path ='/*' element={<Error/>}/>  */}
-        <Route path='/newcomponent' element={<SampleComponent/>}/>
-        <Route path='/anotherComponent' element={<AnotherComponent/>}/>
-        import axios from 'axios'
-      </Routes> 
+          <Route path="users" element={<Users/>}/>
+          <Route path="users/:UserId" element={<UserDetails />} />
+          <Route path="/newcomponent" element={<SampleComponent />} />
+          <Route path="/anothercomponent" element={<AnotherComponent/>}/>
+
+      
+        </Routes> 
+
+
       {/* <Provider store={store}> 
         <UserContainer/>
       </Provider> */}
+      
+       <Provider store={store}>
+      <div>
+        <ProductList products={products} />
+        <ShoppingCart />
+      </div>
+    </Provider>  
      
-      <Provider store={store}>
-        <div>
-          <ProductList products={products}/>// provider for shoppping cart application
-          <ShoppingCart/>
-        </div>
-      </Provider>
-      <LoginComponentAxios/>
-        
-   
+       
+
 
 
 

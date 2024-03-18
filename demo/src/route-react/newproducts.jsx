@@ -1,6 +1,4 @@
-import React,{Link,Outlet} from 'react';
-
-
+import React from 'react';
 export default function NewProducts() {
   return (
     <div>
@@ -9,7 +7,6 @@ export default function NewProducts() {
       <li>Jackets</li>
      <li>Tops and tees</li>
       </ul>
-      <Outlet />
     </div>
   );
 }

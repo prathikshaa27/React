@@ -4,7 +4,7 @@ export default function SampleComponent() {
     const navigate = useNavigate();
 
     function handleClick(){
-        navigate('/AnotherComponent')
+        navigate('/anothercomponent')
     }
   return (
     <div>
