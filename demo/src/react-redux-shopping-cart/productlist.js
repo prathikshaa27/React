@@ -4,7 +4,6 @@ import { addToCart } from './cartactions';
 
 const ProductList = ({ products }) => {
   const dispatch = useDispatch();
-
   return (
     <div>
       <h2>Products</h2>

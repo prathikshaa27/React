@@ -49,10 +49,10 @@ import MyComponent from "./withoutes6";
 // import Counter1 from "./UseReducer";
 // import Result from "./useMemo";
 // import Message from "./UseCallback";
-// import Table from './useMemo';
+ import Table from './usememo';
 // import MyForm from "./CustomHooks";
 import Sample1 from "./hooksuseref";
-import LoginForm from "./login";
+//import LoginForm from "./login";
 import DidUpdate from "./componentdidupdate";
 import AuthenticatedComponent from './authenticateduserprofile'
 import InputComponentS from "./allhooks";
@@ -63,7 +63,7 @@ import PutDataComponent from "./axios/putdata";
 import DataFetchingComponent from "./axios/getrequest";
 import Page from "./page";
 import CleanUp from "./hooksuseeffect";
- import {Routes,Route} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import Navbar from '../../demo/src/route-react/navbar';
 import Home from './route-react/home';
 import About from './route-react/about';
@@ -77,14 +77,19 @@ import SampleComponent from '../../demo/src/route-react/newcomponent';
 import AnotherComponent from './route-react/anothercomponent';
 // import { Provider } from "react-redux";
 import UserContainer from "./react-redux-demo/UserContainer";
-import Upper from './liftingstate';
 //import store from "./react-redux-demo/store1";
 import { Provider } from "react-redux";
 import store from './react-redux-shopping-cart/store';
+import Dashboard from './react-redux-shopping-cart/dashboard';
 import ProductList from "./react-redux-shopping-cart/productlist";
 import ShoppingCart from "./react-redux-shopping-cart/shoppingcart";
 //import { BrowserRouter as Routes, Route} from 'react-router-dom';
+import Login from './axios/loginformaxios';
 import WrapperComponent from "./wrapped";
+import LoginForm from "./user authentication/loginform";
+import SignUpPage from './user authentication/signuppage';
+import CreateNewPortal from "./reviewactions/portals";
+import WebComponent from "./reviewactions/webcomponents";
 
 
 
@@ -109,6 +114,7 @@ class App extends Component{
   }
 }
 function App1(){
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 return(
   
@@ -134,7 +140,7 @@ return(
       {/* <Task/>
       <Callback/>
       <LifecycleComponent/> */}
-       {/* <Example1/>
+       {/* <E<</h1>xample1/>
       <Sample/> */}
 
     {/* <Forms/> */}
@@ -208,11 +214,9 @@ h1>
      <Lifecycle/>
      <DeleteRequest/> */}
      {/* <LoginComponentAxios/> */}
-     {/* <Upper/> */}
-   
-         <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
+        {/* <Navbar/> */}
+        {/* <Routes> */}
+          {/* <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/products" element={<Products/>}>
           <Route path="oldproducts" element={<OldProducts/>}/>
@@ -221,22 +225,35 @@ h1>
           <Route path="users" element={<Users/>}/>
           <Route path="users/:UserId" element={<UserDetails />} />
           <Route path="/newcomponent" element={<SampleComponent />} />
-          <Route path="/anothercomponent" element={<AnotherComponent/>}/>
-
-      
-        </Routes> 
+          <Route path="/anothercomponnet" element={<AnotherComponent/>}/> */}
+         
+       {/* <Route exomponentact path="/" element={<LoginFormAxios/>} />
+       <Route path="/dashboard" element={<Dashboard/>} />
+      </Routes> */}
 
 
       {/* <Provider store={store}> 
         <UserContainer/>
       </Provider> */}
       
-       <Provider store={store}>
+      {/* <Provider store={store}>
       <div>
         <ProductList products={products} />
         <ShoppingCart />
       </div>
-    </Provider>  
+    </Provider>  */}
+    {/* <Table/> */}
+    <CreateNewPortal/>
+    <div className="App">
+      <h1>Welcome to our Website</h1>
+      {!isLoggedIn ? (
+        <SignUpPage setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <LoginForm setIsLoggedIn={setIsLoggedIn} />
+      )}
+    </div>
+       
+    
      
        
 

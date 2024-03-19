@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 
-const ChildComponent = React.forwardRef((props, ref) => {
+const ChildComponent = React.forwardRef((ref) => {
   return <input ref={ref} />;
 });
 

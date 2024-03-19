@@ -1,4 +1,17 @@
 const formFields = [
+
+    {
+    "name": "username",
+    "placeholder": "Username",
+    "type": "text"
+    },
+    {
+    "name": "password",
+    "placeholder": "Password",
+    "type": "password"
+    }
+    ]
+   
   //   {
   //     Name: 'Username',
   //     type: 'text',
@@ -25,14 +38,15 @@ const formFields = [
 
   // loginFormFields.json
 
-  {
-    "label": "Username",
-    "type": "text",
-    "name": "username"
-  },
-  {
-    "label": "Password",
-    "type": "password",
-    "name": "password"
-  }
-];
+//   {
+//     "label": "Username",
+//     "type": "text",
+//     "name": "username"
+//   },
+//   {
+//     "label": "Password",
+//     "type": "password",
+//     "name": "password"
+//   }
+// ];
+export {formFields};
